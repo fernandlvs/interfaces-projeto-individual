@@ -3,12 +3,15 @@ const path = require('path');
 const crypto = require('crypto');
 
 const armazen = multer.diskStorage({
-    destination: path.resolve(__dirname, '..', 'src', 'uploads'),
+    destination:(req, file, cb) => { 
+        cb(null, path.resolve(__dirname, '..', 'src', 'uploads')) },
     filename: (req, file, cb) => {
         crypto.randomBytes(16, (err, hash) => {
             if (err) cb(err);
             
-            cb(null, hash.toString('hex') + path.extname(file.originalname));
+            const fileName = `${hash.toString('hex')}${path.extname(file.originalname)}`;
+
+            cb(null, fileName);
         });
     }
 });
