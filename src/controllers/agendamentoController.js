@@ -107,5 +107,32 @@ const atualizarAgendamento = async (req, res) => {
   }
 }
 
-export { criarAgendamento, listarAgendamentos, buscarAgendamento, atualizarAgendamento
- };
+const deletarAgendamento = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const agendamento = await Agendamento.findByIdAndDelete(id);
+
+    if (!agendamento) {
+      return res.status(404).json({
+        sucesso: false,
+        mensagem: 'Agendamento não encontrado',
+      });
+    }
+    res.status(200).json({
+      sucesso: true,
+      mensagem: 'Agendamento deletado com sucesso',
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      sucesso: false,
+      mensagem: error.message,
+    });
+  }
+
+}
+
+
+
+
+export { criarAgendamento, listarAgendamentos, buscarAgendamento, atualizarAgendamento, deletarAgendamento};
