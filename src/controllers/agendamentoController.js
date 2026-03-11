@@ -75,5 +75,37 @@ const buscarAgendamento = async (req, res) => {
     }
 }
 
-export { criarAgendamento, listarAgendamentos, buscarAgendamento
+const atualizarAgendamento = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { cliente, funcionario, servico, data, status } = req.body;
+
+    const agendamento = await Agendamento.findByIdAndUpdate(
+      id,
+      { cliente, funcionario, servico, data, status },
+      { new: true } //retorna o documento atualizado
+    );
+
+    if (!agendamento) {
+      return res.status(404).json({
+        sucesso: false,
+        mensagem: 'Agendamento não encontrado',
+      });
+    }
+
+    res.status(200).json({
+      sucesso: true,
+      mensagem: 'Agendamento atualizado com sucesso',
+      dados: agendamento,
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      sucesso: false,
+      mensagem: error.message,
+    });
+  }
+}
+
+export { criarAgendamento, listarAgendamentos, buscarAgendamento, atualizarAgendamento
  };
