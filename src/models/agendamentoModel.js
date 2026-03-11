@@ -22,7 +22,7 @@ const agendamentoSchema = new mongoose.Schema(
 
     data: {
       type: Date,
-      required: true
+      required: [true, 'A data do agendamento é obrigatória.']
     },
 
     status: {
