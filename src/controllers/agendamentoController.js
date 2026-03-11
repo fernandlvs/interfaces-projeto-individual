@@ -18,7 +18,7 @@ const criarAgendamento = async (req, res) => {
         sucesso: false,
         mensagem: error.message,
     });
-    }
+  }
 };
 
 const listarAgendamentos = async (req, res) => {
@@ -40,11 +40,40 @@ const listarAgendamentos = async (req, res) => {
             mensagem: error.message,
         });
     }
+
 };
 
+//bsucar um agendamento especifico pelo ID que é passado como parametro na URL
+const buscarAgendamento = async (req, res) => {
+  try {
+    const { id } = req.params;
 
+    const agendamento = await Agendamento.findById(id)
+    //ao inves de retornar apenas os IDs relacionados, retorna os nomes 
+      .populate('cliente', 'nome') 
+      .populate('funcionario', 'nome')
+      .populate('servico', 'nome'); 
+    
+      //se o agendamento não for encontrado, retorna 404
+    if (!agendamento) { 
+      return res.status(404).json({
+        sucesso: false,
+        mensagem: 'Agendamento não encontrado',
+      });
+    }
+      //se encontrado, retorna os dados do agendamento
+    res.status(200).json({
+      sucesso: true,
+      mensagem:'Agendamento encontrado',
+      dados: agendamento,
+    });
+  } catch (error) {
+      res.status(500).json({
+        sucesso: false,
+        mensagem: error.message,
+      });
+    }
+}
 
-
-
-export { criarAgendamento, listarAgendamentos
- };  
+export { criarAgendamento, listarAgendamentos, buscarAgendamento
+ };
