@@ -43,7 +43,7 @@ const listarAgendamentos = async (req, res) => {
 
 };
 
-//bsucar um agendamento especifico pelo ID que é passado como parametro na URL
+
 const buscarAgendamento = async (req, res) => {
   try {
     const { id } = req.params;
@@ -54,14 +54,14 @@ const buscarAgendamento = async (req, res) => {
       .populate('funcionario', 'nome')
       .populate('servico', 'nome'); 
     
-      //se o agendamento não for encontrado, retorna 404
+      
     if (!agendamento) { 
       return res.status(404).json({
         sucesso: false,
         mensagem: 'Agendamento não encontrado',
       });
     }
-      //se encontrado, retorna os dados do agendamento
+      
     res.status(200).json({
       sucesso: true,
       mensagem:'Agendamento encontrado',
