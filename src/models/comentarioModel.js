@@ -2,12 +2,13 @@ import mongoose from "mongoose";
 
 const comentarioSchema = new mongoose.Schema(
   {
-    // RELACIONAMENTO 1 - N COM CLIENTE E SERVIÇO
+    // 1 para N - comentario guarda o id do cliente
     cliente: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Cliente",
       required: [true, "Cliente é obrigatório"],
     },
+    // 1 para N - comentario guarda o id do serviço
     servico: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Servico",

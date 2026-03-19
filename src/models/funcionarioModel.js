@@ -26,13 +26,13 @@ const funcionarioSchema = new mongoose.Schema(
       enum: ["admin", "funcionario"],
       default: "funcionario"
     },
-    // RELACIONAMENTO N - N COM SERVIÇO
+    // N para N - a outra parte do relacionamento está em servicoModel.js
     servicos: [
-  {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Servico"
-  }
-]
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Servico"
+      }
+    ]
   },
   { timestamps: true }
 );

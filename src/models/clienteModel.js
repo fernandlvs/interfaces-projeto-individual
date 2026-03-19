@@ -18,6 +18,11 @@ const clienteSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    // 1 para 1 - a outra parte do relacionamento está em perfilCliente
+    perfil: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "PerfilCliente",
+    },
   },
   {
     timestamps: { createdAt: "criadoEm", updatedAt: "atualizadoEm" },
