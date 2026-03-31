@@ -16,7 +16,14 @@ const servicoSchema = new mongoose.Schema(
         },
         duracaoMinutos: {
             type: Number
-        }
+        },
+        // N para N - a outra parte do relacionamento está em funcionarioModel.js
+        funcionarios: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Funcionario"
+            }
+        ]
     },
     { timestamps: true }
 );

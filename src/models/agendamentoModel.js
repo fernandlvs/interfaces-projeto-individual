@@ -2,19 +2,21 @@ import mongoose from "mongoose";
 
 const agendamentoSchema = new mongoose.Schema(
   {
-    // RELACIONAMENTO 1 - N COM CLIENTE, FUNCIONÁRIO E SERVIÇO
+    // 1 para N - agendamento guarda o id do cliente
     cliente: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Cliente",
       required: true
     },
 
+    // 1 para N - guarda o id do funcionário
     funcionario: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Funcionario",
       required: true
     },
 
+    // 1 para N - guarda o id do serviço
     servico: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Servico",
