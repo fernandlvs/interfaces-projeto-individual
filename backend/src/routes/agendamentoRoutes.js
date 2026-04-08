@@ -7,7 +7,7 @@ import { verificarToken } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
-router.use(verificarToken);
+//router.use(verificarToken);
 
 router.post('/', criarAgendamento);
 router.get('/', listarAgendamentos);
