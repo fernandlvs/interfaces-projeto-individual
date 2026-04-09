@@ -1,0 +1,345 @@
+.page {
+  padding: 32px;
+  flex: 1;
+  background: #faf8f6;
+  min-height: 100vh;
+}
+
+.pageHeader {
+  margin-bottom: 24px;
+}
+.titulo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4a4442;
+  margin: 0;
+}
+.subtitulo {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 4px 0 0;
+}
+
+/* Stats */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.statValor {
+  font-size: 36px;
+  font-weight: 700;
+  color: #4a4442;
+}
+.statLabel {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.statVip {
+  color: #d4a59a;
+}
+.statRetorno {
+  color: #22c55e;
+}
+
+/* Tabela card */
+.tabelaCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.tabelaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f3f4f6;
+}
+.tabelaTitulo {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4a4442;
+  margin: 0;
+}
+.tabelaAcoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Busca */
+.buscaWrapper {
+  position: relative;
+}
+.buscaIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c4b5b0;
+}
+.buscaInput {
+  padding: 8px 12px 8px 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  background: #faf8f6;
+  outline: none;
+  width: 220px;
+  transition: border 0.2s;
+  color: #4a4442;
+}
+.buscaInput::placeholder {
+  color: #c4b5b0;
+}
+.buscaInput:focus {
+  border-color: #d4a59a;
+}
+
+/* Botão novo */
+.btnNovo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #d4a59a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btnNovo:hover {
+  background: #c4948a;
+}
+
+/* Tabela */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.tabela thead tr {
+  border-bottom: 1px solid #f3f4f6;
+}
+.tabela th {
+  padding: 10px 24px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+}
+.tabela td {
+  padding: 14px 24px;
+  color: #4a4442;
+  border-bottom: 1px solid #f9f9f9;
+}
+.tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+.tabela tbody tr:hover {
+  background: #fdfcfb;
+}
+
+.nomeCell {
+  font-weight: 500;
+}
+.telefoneCell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #6b7280;
+}
+
+/* Badges de status */
+.badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.badgeVIP {
+  background: #fce7e3;
+  color: #d4a59a;
+}
+.badgeREGULAR {
+  background: #e8eaf6;
+  color: #7986cb;
+}
+.badgeNOVA {
+  background: #d1fae5;
+  color: #059669;
+}
+
+/* Botão ver detalhes */
+.btnVerDetalhes {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+.btnVerDetalhes:hover {
+  color: #d4a59a;
+}
+
+/* Utilitários */
+.info {
+  color: #9ca3af;
+  font-size: 14px;
+  padding: 24px;
+}
+.erro {
+  color: #dc2626;
+  font-size: 13px;
+  padding: 0 24px 12px;
+}
+
+/* Modal */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.modal {
+  background: white;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+.modalHeader h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a4442;
+  margin: 0;
+}
+.btnFechar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+}
+.btnFechar:hover {
+  background: #f3f4f6;
+  color: #4a4442;
+}
+
+.modalBody {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.modalBody label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: -6px;
+}
+.modalBody input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border 0.2s;
+  background: white;
+  box-sizing: border-box;
+}
+.modalBody input:focus {
+  border-color: #d4a59a;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px 24px 20px;
+  border-top: 1px solid #f3f4f6;
+}
+.btnPrimario {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #d4a59a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btnPrimario:hover {
+  background: #c4948a;
+}
+.btnPrimario:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btnSecundario {
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13px;
+  color: #4b5563;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btnSecundario:hover {
+  background: #f3f4f6;
+}
+.btnDeletarModal {
+  background: none;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13px;
+  color: #dc2626;
+  cursor: pointer;
+  margin-right: auto;
+  transition: background 0.2s;
+}
+.btnDeletarModal:hover {
+  background: #fef2f2;
+}
