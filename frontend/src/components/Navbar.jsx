@@ -10,7 +10,9 @@ const menuItems = [
   { path: '/admin/agendamentos', icon: Calendar, label: 'Agendamentos' },
   { path: '/admin/clientes', icon: Users, label: 'Clientes' },
   { path: '/admin/galeria', icon: Image, label: 'Galeria' },
+  { path: '/admin/avaliacoes', icon: Star, label: 'Avaliações' },
   { path: '/admin/usuarios', icon: UserCircle, label: 'Usuários' },
+  { path: '/admin/configuracoes', icon: Settings, label: 'Configurações' },
 ]
 
 function Navbar() {

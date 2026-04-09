@@ -1,0 +1,291 @@
+.container {
+  padding: 40px;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.titulo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #4a4442;
+  margin: 0;
+}
+
+.subtitulo {
+  font-size: 13px;
+  color: #9ca3af;
+  margin: 4px 0 0;
+}
+
+.btnAdicionar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #d4a59a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btnAdicionar:hover { opacity: 0.9; }
+
+.buscaContainer {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.buscaIcone {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.busca {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.busca:focus { border-color: #d4a59a; }
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabela th {
+  padding: 12px 24px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabela td {
+  padding: 16px 24px;
+  color: #4a4442;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.tabela tr:last-child td { border-bottom: none; }
+.tabela tr:hover td { background: #fafafa; }
+
+.usuarioInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #d4a59a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.usuarioNome {
+  font-weight: 500;
+  color: #111827;
+}
+
+.emailCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.roleAdmin { background: #f3e8ff; color: #7e22ce; }
+.roleFuncionaria { background: #dbeafe; color: #1d4ed8; }
+.roleRecepcionista { background: #dcfce7; color: #15803d; }
+
+.acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btnEditar {
+  background: none;
+  border: none;
+  color: #d4a59a;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.btnEditar:hover { color: #b8877a; }
+
+.btnDeletar {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.btnDeletar:hover { color: #b91c1c; }
+
+.vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px;
+  color: #9ca3af;
+  gap: 8px;
+}
+
+.permissoes {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.permissoesTitulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e3a5f;
+  margin: 0 0 8px;
+}
+
+.permissoesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  color: #1e40af;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  width: 480px;
+  max-width: 90%;
+}
+
+.modalTitulo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4a4442;
+  margin: 0 0 24px;
+}
+
+.modalCampos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.modalCampos label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.modalInput {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modalInput:focus { border-color: #d4a59a; }
+
+.permissaoHint {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.modalAcoes {
+  display: flex;
+  gap: 12px;
+}
+
+.btnCancelarModal {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  color: #374151;
+}
+
+.btnSalvar {
+  flex: 1;
+  padding: 10px;
+  background: #d4a59a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btnSalvar:hover { opacity: 0.9; }
