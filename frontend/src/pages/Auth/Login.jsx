@@ -1,6 +1,6 @@
 import "./Login.css";
 import { useState } from "react";
-import axios from "axios";
+import api from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
@@ -18,8 +18,8 @@ export default function Login() {
         try {
             setLoading(true);
 
-            const response = await axios.post(
-                "http://localhost:3000/auth/login",
+            const response = await api.post(
+                    "/auth/login",
                 {
                     email,
                     senha,
